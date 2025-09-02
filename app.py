@@ -80,16 +80,16 @@ ALL_COLUMNS_MAP = {
     'rank_roic': 'Rank ROIC',
     'rank_ey': 'Rank EY',
     'magic_formula_rank': 'Rank MF',
-    'cotacao': 'Cotação (R\$)',
-    'vol_med_2m': 'Vol. Médio 2M (R\$)',
+    'cotacao': 'Cotação (R$)',
+    'vol_med_2m': 'Vol. Médio 2M (R$)',
     'pl': 'P/L',
     'pvp': 'P/VP',
     'div_yield': 'Div. Yield (%)',
-    'lpa': 'LPA (R\$)',
+    'lpa': 'LPA (R$)',
     '_30_dias': 'Ret. 30D (%)',
     '_12_meses': 'Ret. 12M (%)',
     'marg_liquida': 'Margem Líquida (%)',
-    'valor_alocado': 'Valor Alocado (R\$)',
+    'valor_alocado': 'Valor Alocado (R$)',
     'qtd_acoes': 'Qtd. Ações',
     'peso_carteira': '% na Carteira',
     'data_execucao': 'Data Execução',
@@ -99,16 +99,16 @@ ALL_COLUMNS_MAP = {
 FORMATTING_RULES = {
     'ROIC (%)': lambda x: format_br_float(x, decimals=2),
     'EY (%)': lambda x: format_br_float(x, decimals=2),
-    'Cotação (R\$)': lambda x: f'R\$ {format_br_float(x, decimals=2)}',
-    'Vol. Médio 2M (R\$)': lambda x: f'R\$ {format_br_int(x)}',
+    'Cotação (R$)': lambda x: f'R$ {format_br_float(x, decimals=2)}',
+    'Vol. Médio 2M (R$)': lambda x: f'R$ {format_br_int(x)}',
     'P/L': lambda x: format_br_float(x, decimals=2),
     'P/VP': lambda x: format_br_float(x, decimals=2),
     'Div. Yield (%)': lambda x: f'{format_br_float(x, decimals=2)}%',
-    'LPA (R\$)': lambda x: f'R\$ {format_br_float(x, decimals=2)}',
+    'LPA (R$)': lambda x: f'R$ {format_br_float(x, decimals=2)}',
     'Ret. 30D (%)': lambda x: f'{format_br_float(x, decimals=2)}%',
     'Ret. 12M (%)': lambda x: f'{format_br_float(x, decimals=2)}%',
     'Margem Líquida (%)': lambda x: f'{format_br_float(x, decimals=2)}%',
-    'Valor Alocado (R\$)': lambda x: f'R\$ {format_br_float(x, decimals=2)}',
+    'Valor Alocado (R$)': lambda x: f'R$ {format_br_float(x, decimals=2)}',
     'Qtd. Ações': lambda x: format_br_int(x),
     '% na Carteira': lambda x: f'{format_br_float(x, decimals=2)}%',
     'Data Execução': lambda x: pd.to_datetime(x).strftime('%d/%m/%Y') if pd.notna(x) else 'N/A',
@@ -119,12 +119,12 @@ DEFAULT_SELECTED_COLUMNS_DISPLAY = [
     'Ticker', 
     'Empresa', 
     'Setor', 
-    'Cotação (R\$)', 
-    'Vol. Médio 2M (R\$)',
+    'Cotação (R$)', 
+    'Vol. Médio 2M (R$)',
     'ROIC (%)', 
     'EY (%)', 
     'Rank MF', 
-    'Valor Alocado (R\$)',
+    'Valor Alocado (R$)',
     'Qtd. Ações', 
     '% na Carteira',
 ]
@@ -232,7 +232,7 @@ app.layout = html.Div([
                 )
             ]),
             html.Div([
-                html.P("Volume Médio Negociado (últimos 2 meses) Mínimo (R\$):", className='sidebar-label'),
+                html.P("Volume Médio Negociado (últimos 2 meses) Mínimo (R$):", className='sidebar-label'),
                 dcc.Input(
                     id='min-volume-input',
                     type='text',
@@ -244,7 +244,7 @@ app.layout = html.Div([
             html.Hr(),
             html.H3("Configurações de Investimento"),
             html.Div([
-                html.P("Valor a Investir (R\$):", className='sidebar-label'),
+                html.P("Valor a Investir (R$):", className='sidebar-label'),
                 dcc.Input(
                     id='total-investimento-input',
                     type='text',
@@ -271,7 +271,7 @@ app.layout = html.Div([
                 html.P("Selecione as colunas para exibir (a ordem de seleção define a ordem na tabela):", className='sidebar-label'),
                 dcc.Dropdown(
                     id='selected-columns-dropdown',
-                    options=[{'label': col, 'value': col} for col in ALL_COLUMNS_MAP.values() if col not in ['Data Execução', 'Valor Alocado (R\$)', 'Qtd. Ações', '% na Carteira']],
+                    options=[{'label': col, 'value': col} for col in ALL_COLUMNS_MAP.values() if col not in ['Data Execução', 'Valor Alocado (R$)', 'Qtd. Ações', '% na Carteira']],
                     value=DEFAULT_SELECTED_COLUMNS_DISPLAY,
                     multi=True,
                     className='dash-dropdown-custom'
@@ -361,11 +361,11 @@ app.layout = html.Div([
                     " Ranking da Fórmula Mágica. É a soma dos rankings de ROIC e Earnings Yield. Empresas com menor soma são consideradas as melhores pela Fórmula Mágica."
                 ]),
                 html.Li([
-                    html.B("Cotação (R\$):"),
+                    html.B("Cotação (R$):"),
                     " Preço da ação no fechamento do dia anterior."
                 ]),
                 html.Li([
-                    html.B("Vol. Médio 2M (R\$):"),
+                    html.B("Vol. Médio 2M (R$):"),
                     " Volume médio negociado da ação nos últimos 2 meses. Importante para avaliar a liquidez."
                 ]),
                 html.Li([
@@ -397,7 +397,7 @@ app.layout = html.Div([
                     " Lucro líquido dividido pela receita líquida. Indica a porcentagem de cada real de receita que se transforma em lucro."
                 ]),
                 html.Li([
-                    html.B("Valor Alocado (R\$):"),
+                    html.B("Valor Alocado (R$):"),
                     " O valor real alocado para a empresa, considerando a cotação e a quantidade de ações compradas."
                 ]),
                 html.Li([
@@ -562,17 +562,17 @@ def update_allocation_and_summary(selected_rows_indices, total_investimento_str,
     num_empresas_selecionadas_final = len(df_selected_final)
 
     summary_elements = []
-    summary_elements.append(html.P(f"Valor a Investir: R\$ {format_br_float(total_investimento, decimals=2)}"))
+    summary_elements.append(html.P(f"Valor a Investir: R$ {format_br_float(total_investimento, decimals=2)}"))
     summary_elements.append(html.P(f"Número de Empresas Selecionadas para Alocação: {num_empresas_selecionadas_final}"))
 
     if num_empresas_selecionadas_final > 0:
         investimento_por_empresa_ideal_final = total_investimento / num_empresas_selecionadas_final 
-        summary_elements.append(html.P(f"Valor Alocado por Empresa (Ideal): R\$ {format_br_float(investimento_por_empresa_ideal_final, decimals=2)}"))
+        summary_elements.append(html.P(f"Valor Alocado por Empresa (Ideal): R$ {format_br_float(investimento_por_empresa_ideal_final, decimals=2)}"))
     else:
-        summary_elements.append(html.P(f"Valor Alocado por Empresa (Ideal): R\$ {format_br_float(0.0, decimals=2)}"))
+        summary_elements.append(html.P(f"Valor Alocado por Empresa (Ideal): R$ {format_br_float(0.0, decimals=2)}"))
 
-    summary_elements.append(html.P(f"Valor Total Alocado (Real): R\$ {format_br_float(total_alocado_real_final, decimals=2)}"))
-    summary_elements.append(html.P(f"Diferença (Não Alocado): R\$ {format_br_float(total_investimento - total_alocado_real_final, decimals=2)}"))
+    summary_elements.append(html.P(f"Valor Total Alocado (Real): R$ {format_br_float(total_alocado_real_final, decimals=2)}"))
+    summary_elements.append(html.P(f"Diferença (Não Alocado): R$ {format_br_float(total_investimento - total_alocado_real_final, decimals=2)}"))
 
     return df_with_allocation.to_json(date_format='iso', orient='split'), html.Div(summary_elements)
 
