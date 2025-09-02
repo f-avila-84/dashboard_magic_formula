@@ -428,7 +428,7 @@ app.layout = html.Div([
                             html.I(className='fab fa-linkedin'), # Ícone do LinkedIn
                             html.Span(" LinkedIn")
                         ]),
-                        href="[https://www.linkedin.com/in/avilafelipe/]", 
+                        href="https://www.linkedin.com/in/avilafelipe/", 
                         target="_blank",
                         className='contact-link'
                     ),
@@ -437,7 +437,7 @@ app.layout = html.Div([
                             html.I(className='fab fa-github'), # Ícone do GitHub
                             html.Span(" GitHub")
                         ]),
-                        href="[https://github.com/f-avila-84]", 
+                        href="https://github.com/f-avila-84", 
                         target="_blank",
                         className='contact-link'
                     )
