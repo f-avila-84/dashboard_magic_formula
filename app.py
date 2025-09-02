@@ -421,7 +421,7 @@ app.layout = html.Div([
                             html.Span(" LinkedIn")
                         ]),
                         href="https://www.linkedin.com/in/avilafelipe/", 
-                        ,
+                        
                         className='contact-link'
                     ),
                     html.A(
@@ -430,7 +430,7 @@ app.layout = html.Div([
                             html.Span(" GitHub")
                         ]),
                         href="https://github.com/f-avila-84", 
-                        ,
+                        
                         className='contact-link'
                     )
                 ])
