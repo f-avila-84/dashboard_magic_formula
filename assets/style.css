@@ -262,14 +262,14 @@ html, body, #_dash-app { /* Target the entire Dash app container */
 
 /* Cor do texto da tag selecionada (o valor, e.g., "NATU3") */
 .dash-dropdown-custom .Select-value-label {
-    color: var(--text-color-light) !important; /* Deve ser azul escuro para contraste no fundo dourado */ /* CLARA PARA CONTRASTE COM AZUL FELIPE */
+    color: var(--primary-color) !important; /* Deve ser azul escuro para contraste no fundo dourado */
     opacity: 1 !important; 
 }
 
 /* Estilo do ícone 'X' em estado normal */
 .dash-dropdown-custom .Select-value-icon {
-    color: var(--text-color-light) !important; /* Cor inicial: clara */
-    fill: var(--text-color-light) !important; /* Para ícones SVG */
+    color: var(--primary-color) !important; /* Cor inicial: azul escuro */
+    fill: var(--primary-color) !important; /* Para ícones SVG */
     font-weight: bold !important;
     opacity: 1 !important;
     padding: 0 2px; 
@@ -286,7 +286,7 @@ html, body, #_dash-app { /* Target the entire Dash app container */
     justify-content: center;
     padding: 0 4px; 
     margin-left: 5px; 
-    color: var(--text-color-light) !important; /* Garante que a cor padrão do 'x' seja azul */
+    color: var(--primary-color) !important; /* Garante que a cor padrão do 'x' seja azul */
 }
 
 /* Estilo para a área clicável do 'X' (o .Select-value-label__remove) ao passar o mouse */
@@ -300,7 +300,7 @@ html, body, #_dash-app { /* Target the entire Dash app container */
 
 /* Força a cor do ícone 'X' (o .Select-value-icon) quando seu PARENT .Select-value-label__remove está em hover */
 .dash-dropdown-custom .Select-value-label__remove:hover .Select-value-icon {
-    color: var(--secondary-color) !important; /* O 'X' fica branco */ /* O X FICA DOURADO COM O MOUSE EM CIMA FELIPE */
+    color: var(--text-color-light) !important; /* O 'X' fica branco */
     fill: var(--text-color-light) !important; /* Para ícones SVG */
     stroke: var(--text-color-light) !important; /* Para SVGs que usam stroke */
     background-color: transparent !important; /* Garante que o ícone em si não tenha fundo */
@@ -404,53 +404,3 @@ hr {
 .info-box-container a {
     color: #4A90E2; /* Cor para links, pode ajustar para algo que combine mais */
 }
-
-/* --- NOVA SEÇÃO DE CONTATO --- */
-.contact-section {
-    padding: 30px 20px;
-    background-color: var(--table-bg-color-odd); /* Fundo sutil para a seção */
-    border-radius: 8px;
-    margin-top: 40px; /* Espaçamento da seção anterior */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.contact-section h3 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.contact-section p {
-    color: var(--text-color-dark);
-    margin-bottom: 15px;
-    line-height: 1.6;
-    max-width: 700px; /* Limita a largura do texto para melhor leitura */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center; /* Centraliza os links */
-    gap: 20px; /* Espaço entre os links */
-    margin-top: 25px;
-}
-
-.contact-link {
-    background-color: var(--primary-color);
-    color: var(--text-color-light) !important; /* Texto branco */
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: flex; /* Para alinhar ícone e texto */
-    align-items: center;
-    gap: 8px; /* Espaço entre ícone e texto */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.contact-link:hover {
-    background-color: var(--secondary-color); /* Dourado no hover */
-    color: var(--primary-color) !important; /* Texto azul no hover */
-}
-/* --- FIM DA NOVA SEÇÃO DE CONTATO --- */
