@@ -78,6 +78,7 @@ html, body, #_dash-app { /* Target the entire Dash app container */
 /* Media Query para telas menores (celulares) */
 @media (max-width: 768px) {
     #fixed-header-container {
+        position: relative; /* Muda para relativo no celular */ /* relative (original), fixed (desktop) */
         margin-bottom: 0px;
         box-shadow: none;
         background-color: var(--primary-color) !important;
@@ -173,7 +174,7 @@ html, body, #_dash-app { /* Target the entire Dash app container */
 #sidebar {
     background-color: var(--primary-color);
     width: 280px; /* Largura fixa padrão da sidebar */
-    padding: 18px;
+    padding: 15px;
     color: var(--text-color-light);
     flex-shrink: 0; /* Previne que a sidebar encolha */
     overflow-y: auto; /* Adiciona scroll se o conteúdo for muito longo */
