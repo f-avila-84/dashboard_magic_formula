@@ -149,7 +149,7 @@ html, body, #_dash-app { /* Target the entire Dash app container */
 /* NEW: Botão de alternância da Sidebar */
 .toggle-sidebar-button-class {
     position: fixed; /* Fixo na tela por padrão no desktop */
-    top: 110px; /* Ajuste para ficar abaixo do cabeçalho fixo */
+    top: 80px; /* Ajuste para ficar abaixo do cabeçalho fixo */
     left: calc(10px); 
     background-color: var(--secondary-color);
     color: var(--primary-color);
