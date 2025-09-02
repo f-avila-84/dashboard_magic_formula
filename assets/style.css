@@ -262,13 +262,13 @@ html, body, #_dash-app { /* Target the entire Dash app container */
 
 /* Cor do texto da tag selecionada (o valor, e.g., "NATU3") */
 .dash-dropdown-custom .Select-value-label {
-    color: var(--primary-color) !important; /* Deve ser azul escuro para contraste no fundo dourado */
+    color: var(--text-color-light) !important; /* Deve ser azul escuro para contraste no fundo dourado */
     opacity: 1 !important; 
 }
 
 /* Estilo do ícone 'X' em estado normal */
 .dash-dropdown-custom .Select-value-icon {
-    color: var(--primary-color) !important; /* Cor inicial: azul escuro */
+    color: var(--text-color-light) !important; /* Cor inicial: azul escuro */
     fill: var(--primary-color) !important; /* Para ícones SVG */
     font-weight: bold !important;
     opacity: 1 !important;
@@ -291,7 +291,7 @@ html, body, #_dash-app { /* Target the entire Dash app container */
 
 /* Estilo para a área clicável do 'X' (o .Select-value-label__remove) ao passar o mouse */
 .dash-dropdown-custom .Select-value-label__remove:hover {
-    background-color: var(--primary-color) !important; /* Fundo azul escuro para a área de hover */
+    background-color: var(--secondary-color) !important; /* Fundo azul escuro para a área de hover */
     border: none !important; /* Remove qualquer borda que possa aparecer */
     border-radius: 50% !important; /* Formato circular no hover */
     cursor: pointer;
