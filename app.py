@@ -410,7 +410,7 @@ app.layout = html.Div([
                 ]),
             ]), # Fim do html.Ul
 
-            # --- NOVA SEÇÃO DE CONTATO ---
+"""            # --- NOVA SEÇÃO DE CONTATO ---
             html.Hr(), # Separador para a seção de contato
             html.Div(className='contact-section', children=[
                 html.H3("Criado por: Felipe Avila", style={'textAlign': 'center'}),
@@ -443,8 +443,37 @@ app.layout = html.Div([
                     )
                 ])
             ]),
+            # --- FIM DA NOVA SEÇÃO DE CONTATO ---"""
+
+            # --- NOVA SEÇÃO DE CONTATO ---
+            html.Hr(), # Separador para a seção de contato
+            html.Div(className='contact-section', children=[
+                html.H3("Criado por: Felipe Avila", style={'margin': '0'}), # Ajuste aqui para remover margens padrão
+                html.Div(className='contact-links', children=[
+                    html.A(
+                        html.Span([
+                            html.I(className='fab fa-linkedin'), # Ícone do LinkedIn
+                            html.Span(" LinkedIn")
+                        ]),
+                        href="https://www.linkedin.com/in/avilafelipe/", 
+                        ,
+                        className='contact-link'
+                    ),
+                    html.A(
+                        html.Span([
+                            html.I(className='fab fa-github'), # Ícone do GitHub
+                            html.Span(" GitHub")
+                        ]),
+                        href="https://github.com/f-avila-84", 
+                        ,
+                        className='contact-link'
+                    )
+                ])
+            ]),
             # --- FIM DA NOVA SEÇÃO DE CONTATO ---
 
+
+            
         ]) # Fim de main-content
     ]) # Fim de main-content-wrapper
 ]) # Fim do app.layout
