@@ -286,7 +286,7 @@ html, body, #_dash-app { /* Target the entire Dash app container */
     justify-content: center;
     padding: 0 4px; 
     margin-left: 5px; 
-    color: var(--primary-color) !important; /* Garante que a cor padrão do 'x' seja azul */
+    color: var(--text-color-light) !important; /* Garante que a cor padrão do 'x' seja azul */
 }
 
 /* Estilo para a área clicável do 'X' (o .Select-value-label__remove) ao passar o mouse */
