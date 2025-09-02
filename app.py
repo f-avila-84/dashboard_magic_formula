@@ -190,6 +190,7 @@ def calculate_allocation_for_df(df_to_calc, total_invest, tipo_compra):
     return df_to_calc
 
 # --- Inicialização do App Dash ---
+# Adicionando o link para o Font Awesome para ícones
 app = dash.Dash(__name__, external_stylesheets=[
     '/assets/style.css',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' 
@@ -407,8 +408,43 @@ app.layout = html.Div([
                     html.B("% na Carteira:"),
                     " O peso percentual real da empresa na carteira, com base no valor alocado."
                 ]),
-            ]) # Fim do html.Ul
-            
+            ]), # Fim do html.Ul
+
+            # --- NOVA SEÇÃO DE CONTATO ---
+            html.Hr(), # Separador para a seção de contato
+            html.Div(className='contact-section', children=[
+                html.H3("Conecte-se Comigo", style={'textAlign': 'center'}),
+                html.P(
+                    "Olá! Meu nome é Felipe e sou um profissional com experiência em marketing e análise de dados, buscando oportunidades em programação, análise de dados e inteligência artificial. Este projeto é um exemplo do meu trabalho e paixão por combinar análise com soluções práticas.",
+                    style={'textAlign': 'center'}
+                ),
+                html.P(
+                    "Ficaria muito feliz em me conectar e discutir como minhas habilidades podem agregar valor à sua equipe:",
+                    style={'textAlign': 'center'}
+                ),
+                html.Div(className='contact-links', children=[
+                    html.A(
+                        html.Span([
+                            html.I(className='fab fa-linkedin'), # Ícone do LinkedIn
+                            html.Span(" LinkedIn")
+                        ]),
+                        href="[COLOQUE SEU LINK DO LINKEDIN AQUI]", 
+                        target="_blank",
+                        className='contact-link'
+                    ),
+                    html.A(
+                        html.Span([
+                            html.I(className='fab fa-github'), # Ícone do GitHub
+                            html.Span(" GitHub")
+                        ]),
+                        href="[COLOQUE SEU LINK DO GITHUB AQUI]", 
+                        target="_blank",
+                        className='contact-link'
+                    )
+                ])
+            ]),
+            # --- FIM DA NOVA SEÇÃO DE CONTATO ---
+
         ]) # Fim de main-content
     ]) # Fim de main-content-wrapper
 ]) # Fim do app.layout
@@ -560,25 +596,26 @@ def update_table_with_calculated_data(calculated_data_json, selected_cols_displa
 
     df_calculated = pd.read_json(io.StringIO(calculated_data_json), orient='split') 
 
-    dash_table_columns_ids = ["Nº"]
+    dash_table_columns_ids = ["Nº"] # Lista de IDs de colunas (strings)
     reverse_map = {v: k for k, v in ALL_COLUMNS_MAP.items()}
 
     for col_display_name in selected_cols_display:
         original_col_name = reverse_map.get(col_display_name, col_display_name)
         if original_col_name in df_calculated.columns and original_col_name not in ['Nº', 'valor_alocado', 'qtd_acoes', 'peso_carteira', 'data_execucao']:
-            # Apenas adiciona o nome da coluna original, o formato é tratado por format_br_float ou format_br_int
-            dash_table_columns_ids.append(original_col_name)
-    
+            dash_table_columns_ids.append(original_col_name) # Adiciona apenas o ID da coluna (string)
+            
     fixed_cols_original_names = ['valor_alocado', 'qtd_acoes', 'peso_carteira'] 
     for original_name in fixed_cols_original_names:
         display_name = ALL_COLUMNS_MAP[original_name]
-        if original_name in df_calculated.columns and original_name not in dash_table_columns_ids:
-            dash_table_columns_ids.append(original_name)
+        # Verifica se a coluna está no DataFrame e se ainda não foi adicionada (como um ID de string)
+        if original_name in df_calculated.columns and original_name not in dash_table_columns_ids: # Corrigido para verificar se o ID já está na lista
+            dash_table_columns_ids.append(original_name) # Adiciona apenas o ID da coluna (string)
+
 
     df_for_display = df_calculated.copy()
     df_for_display.insert(0, 'Nº', range(1, 1 + len(df_for_display)))
 
-    for col_id in dash_table_columns_ids:
+    for col_id in dash_table_columns_ids: # col_id é uma string aqui, como esperado
         col_name_for_formatting = ALL_COLUMNS_MAP.get(col_id, col_id)
         if col_name_for_formatting in FORMATTING_RULES and col_id in df_for_display.columns:
             df_for_display[col_id] = df_for_display[col_id].apply(FORMATTING_RULES[col_name_for_formatting])
