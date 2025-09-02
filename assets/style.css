@@ -268,8 +268,8 @@ html, body, #_dash-app { /* Target the entire Dash app container */
 
 /* Estilo do ícone 'X' em estado normal */
 .dash-dropdown-custom .Select-value-icon {
-    color: var(--primary-color) !important; /* Cor inicial: azul escuro */
-    fill: var(--primary-color) !important; /* Para ícones SVG */
+    color: var(--text-color-light) !important; /*var(--primary-color) !important; /* Cor inicial: azul escuro */
+    fill: var(--text-color-light) !important; /* Para ícones SVG */
     font-weight: bold !important;
     opacity: 1 !important;
     padding: 0 2px; 
