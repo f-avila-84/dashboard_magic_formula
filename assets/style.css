@@ -173,7 +173,7 @@ html, body, #_dash-app { /* Target the entire Dash app container */
 #sidebar {
     background-color: var(--primary-color);
     width: 280px; /* Largura fixa padrão da sidebar */
-    padding: 20px;
+    padding: 18px;
     color: var(--text-color-light);
     flex-shrink: 0; /* Previne que a sidebar encolha */
     overflow-y: auto; /* Adiciona scroll se o conteúdo for muito longo */
