@@ -414,14 +414,14 @@ app.layout = html.Div([
             html.Hr(), # Separador para a seção de contato
             html.Div(className='contact-section', children=[
                 html.H3("Criado por: Felipe Avila", style={'textAlign': 'center'}),
-                '''html.P(
-                    "Olá! Meu nome é Felipe e sou um profissional com experiência em marketing e análise de dados, buscando oportunidades em programação, análise de dados e inteligência artificial. Este projeto é um exemplo do meu trabalho e paixão por combinar análise com soluções práticas.",
-                    style={'textAlign': 'center'}
-                ),
-                html.P(
-                    "Ficaria muito feliz em me conectar e discutir como minhas habilidades podem agregar valor à sua equipe:",
-                    style={'textAlign': 'center'}
-                ),'''
+                #html.P(
+                #    "Olá! Meu nome é Felipe e sou um profissional com experiência em marketing e análise de dados, buscando oportunidades em programação, análise de dados e inteligência artificial. Este projeto é um exemplo do meu trabalho e paixão por combinar análise com soluções práticas.",
+                #    style={'textAlign': 'center'}
+                #),
+                #html.P(
+                #    "Ficaria muito feliz em me conectar e discutir como minhas habilidades podem agregar valor à sua equipe:",
+                #    style={'textAlign': 'center'}
+                #),
                 html.Div(className='contact-links', children=[
                     html.A(
                         html.Span([
