@@ -412,27 +412,26 @@ hr {
     border-radius: 8px;
     margin-top: 40px; /* Espaçamento da seção anterior */
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
+    display: flex; /* Torna o container flexível */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
+    gap: 20px; /* Espaçamento entre o título e os links */
 }
 
 .contact-section h3 {
     color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.contact-section p {
-    color: var(--text-color-dark);
-    margin-bottom: 15px;
-    line-height: 1.6;
-    max-width: 700px; /* Limita a largura do texto para melhor leitura */
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0; /* Remove margens padrão do h3 para controle via flexbox gap */
+    font-size: 1.2em; /* Ajusta o tamanho da fonte para que pareça mais inline com os links */
+    white-space: nowrap; /* Impede que o texto "Criado por: Felipe Avila" quebre */
 }
 
 .contact-links {
     display: flex;
-    justify-content: center; /* Centraliza os links */
+    /* justify-content: center; -> Não é mais necessário, o pai (contact-section) já centraliza */
     gap: 20px; /* Espaço entre os links */
-    margin-top: 25px;
+    margin: 0; /* Remove margem superior, o gap do pai controla */
 }
 
 .contact-link {
@@ -453,4 +452,4 @@ hr {
     background-color: var(--secondary-color); /* Dourado no hover */
     color: var(--primary-color) !important; /* Texto azul no hover */
 }
-/* --- FIM DA NOVA SEÇÃO DE CONTATO --- */ 
+/* --- FIM DA NOVA SEÇÃO DE CONTATO --- */
