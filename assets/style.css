@@ -253,37 +253,81 @@ html, body, #_dash-app { /* Target the entire Dash app container */
     color: var(--text-color-light) !important;
 }
 .dash-dropdown-custom .Select--multi .Select-value { /* Tags dos itens selecionados */
-    background-color: var(--secondary-color) !important;
-    color: var(--primary-color) !important; /* Texto da tag em azul */
+    background-color: var(--secondary-color) !important; /* Fundo dourado da tag */
     border: 1px solid var(--secondary-color) !important;
     border-radius: 3px;
 }
 
-/* AQUI: Ajuste do ícone 'X' - Cor mais escura e negrito para contraste */
-.dash-dropdown-custom .Select-value-icon {
-    color: var(--text-color-light) !important; /* Cor principal para maior contraste */
-    font-weight: bold !important; /* Torna o 'X' mais visível */
-    opacity: 1 !important; /* Garante que não esteja transparente */
-}
+/* --- INÍCIO DOS AJUSTES CONSOLIDADOS PARA O 'X' E SUA ÁREA DE HOVER --- */
 
-/* AQUI: Ajuste do texto da tag selecionada - Cor mais clara para contraste */
+/* Cor do texto da tag selecionada (o valor, e.g., "NATU3") */
 .dash-dropdown-custom .Select-value-label {
-    color: var(--text-color-light) !important; /* Cor principal para maior contraste */
-    /*font-weight: bold !important; /* Torna o 'X' mais visível */
-    opacity: 1 !important; /* Garante que não esteja transparente */
+    color: var(--primary-color) !important; /* Deve ser azul escuro para contraste no fundo dourado */
+    opacity: 1 !important; 
 }
 
-/* AQUI: Melhorando o contraste das opções do dropdown - Fundo branco, texto escuro */
+/* Estilo do ícone 'X' em estado normal */
+.dash-dropdown-custom .Select-value-icon {
+    color: var(--primary-color) !important; /* Cor inicial: azul escuro */
+    fill: var(--primary-color) !important; /* Para ícones SVG */
+    font-weight: bold !important;
+    opacity: 1 !important;
+    padding: 0 2px; 
+    line-height: 1; 
+}
+
+/* Estilo da área clicável ao redor do 'X' em estado normal */
+.dash-dropdown-custom .Select-value-label__remove {
+    background-color: transparent !important; /* Remove qualquer fundo padrão */
+    border: none !important; /* Remove qualquer borda padrão */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px; 
+    margin-left: 5px; 
+    color: var(--primary-color) !important; /* Garante que a cor padrão do 'x' seja azul */
+}
+
+/* Estilo para a área clicável do 'X' (o .Select-value-label__remove) ao passar o mouse */
+.dash-dropdown-custom .Select-value-label__remove:hover {
+    background-color: var(--primary-color) !important; /* Fundo azul escuro para a área de hover */
+    border: none !important; /* Remove qualquer borda que possa aparecer */
+    border-radius: 50% !important; /* Formato circular no hover */
+    cursor: pointer;
+    /* IMPORTANTE: A cor do 'X' será gerenciada pela regra aninhada abaixo */
+}
+
+/* Força a cor do ícone 'X' (o .Select-value-icon) quando seu PARENT .Select-value-label__remove está em hover */
+.dash-dropdown-custom .Select-value-label__remove:hover .Select-value-icon {
+    color: var(--text-color-light) !important; /* O 'X' fica branco */
+    fill: var(--text-color-light) !important; /* Para ícones SVG */
+    stroke: var(--text-color-light) !important; /* Para SVGs que usam stroke */
+    background-color: transparent !important; /* Garante que o ícone em si não tenha fundo */
+}
+
+/* Certifica que nenhuma outra regra de background color ou image sobrescreva o hover do "x" */
+/* Adicionado para ser extra-agressivo contra estilos padrão da biblioteca */
+.dash-dropdown-custom .Select-value-label__remove::before,
+.dash-dropdown-custom .Select-value-label__remove::after {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* --- FIM DOS AJUSTES CONSOLIDADOS PARA O 'X' E SUA ÁREA DE HOVER --- */
+
+
+/* Melhorando o contraste das opções do dropdown - Fundo escuro atenuado */
 .dash-dropdown-custom .Select-menu-outer { /* Container do menu dropdown */
     background-color: var(--input-bg-color-light) !important; /* Fundo escuro atenuado para as opções */
-    border: 1px solid  var(--primary-color) !important; /* Cor secundária a\o redor da lista selecionável */
+    border: 1px solid var(--primary-color) !important; /* Cor secundária ao redor da lista selecionável */
     border-radius: 5px;
 }
 
-/* AQUI: Melhorando o contraste das opções do dropdown - Fundo branco, texto escuro */
+/* Melhorando o contraste das opções do dropdown */
 .dash-dropdown-custom .Select-option { /* Opções no dropdown */
     color: var(--text-color-light) !important; /* Texto claro para melhor legibilidade */
-    background-color: white !important; /* Fundo branco */
+    background-color: var(--input-bg-color-light) !important; /* Fundo escuro atenuado para as opções */
     padding: 10px;
 }
 .dash-dropdown-custom .Select-option.is-focused,
