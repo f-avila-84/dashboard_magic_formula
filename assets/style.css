@@ -125,7 +125,7 @@ html, body, #_dash-app { /* Target the entire Dash app container */
     /* Ajuste para o botão da sidebar no mobile, para que ele role junto */
     .toggle-sidebar-button-class {
         position: absolute !important; /* Muda para absolute no mobile para rolar com o conteúdo */
-        top: 15px !important; /* Mantém a posição relativa ao elemento pai (body ou main-content-wrapper) */
+        top: 18px !important; /* Mantém a posição relativa ao elemento pai (body ou main-content-wrapper) */
     }
 
     /* Remove o padding-top do main-content-wrapper no mobile, já que o cabeçalho é relativo */
