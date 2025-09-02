@@ -190,7 +190,6 @@ def calculate_allocation_for_df(df_to_calc, total_invest, tipo_compra):
     return df_to_calc
 
 # --- Inicialização do App Dash ---
-# Adicionando o link para o Font Awesome para ícones (opcional, mas recomendado)
 app = dash.Dash(__name__, external_stylesheets=[
     '/assets/style.css',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' 
@@ -408,43 +407,8 @@ app.layout = html.Div([
                     html.B("% na Carteira:"),
                     " O peso percentual real da empresa na carteira, com base no valor alocado."
                 ]),
-            ]), # Fim do html.Ul
-
-            # --- NOVA SEÇÃO DE CONTATO ---
-            html.Hr(), # Separador para a seção de contato
-            html.Div(className='contact-section', children=[
-                html.H3("Conecte-se Comigo", style={'textAlign': 'center'}),
-                html.P(
-                    "Olá! Meu nome é Felipe e sou um profissional com experiência em marketing e análise de dados, buscando oportunidades em programação, análise de dados e inteligência artificial. Este projeto é um exemplo do meu trabalho e paixão por combinar análise com soluções práticas.",
-                    style={'textAlign': 'center'}
-                ),
-                html.P(
-                    "Ficaria muito feliz em me conectar e discutir como minhas habilidades podem agregar valor à sua equipe:",
-                    style={'textAlign': 'center'}
-                ),
-                html.Div(className='contact-links', children=[
-                    html.A(
-                        html.Span([
-                            html.I(className='fab fa-linkedin'), # Ícone do LinkedIn
-                            html.Span(" LinkedIn")
-                        ]),
-                        href="[COLOQUE SEU LINK DO LINKEDIN AQUI]", 
-                        target="_blank",
-                        className='contact-link'
-                    ),
-                    html.A(
-                        html.Span([
-                            html.I(className='fab fa-github'), # Ícone do GitHub
-                            html.Span(" GitHub")
-                        ]),
-                        href="[COLOQUE SEU LINK DO GITHUB AQUI]", 
-                        target="_blank",
-                        className='contact-link'
-                    )
-                ])
-            ]),
-            # --- FIM DA NOVA SEÇÃO DE CONTATO ---
-
+            ]) # Fim do html.Ul
+            
         ]) # Fim de main-content
     ]) # Fim de main-content-wrapper
 ]) # Fim do app.layout
@@ -602,13 +566,14 @@ def update_table_with_calculated_data(calculated_data_json, selected_cols_displa
     for col_display_name in selected_cols_display:
         original_col_name = reverse_map.get(col_display_name, col_display_name)
         if original_col_name in df_calculated.columns and original_col_name not in ['Nº', 'valor_alocado', 'qtd_acoes', 'peso_carteira', 'data_execucao']:
-            dash_table_columns_ids.append({"name": col_display_name, "id": original_col_name})
+            # Apenas adiciona o nome da coluna original, o formato é tratado por format_br_float ou format_br_int
+            dash_table_columns_ids.append(original_col_name)
     
     fixed_cols_original_names = ['valor_alocado', 'qtd_acoes', 'peso_carteira'] 
     for original_name in fixed_cols_original_names:
         display_name = ALL_COLUMNS_MAP[original_name]
         if original_name in df_calculated.columns and original_name not in dash_table_columns_ids:
-            dash_table_columns_ids.append({"name": display_name, "id": original_name})
+            dash_table_columns_ids.append(original_name)
 
     df_for_display = df_calculated.copy()
     df_for_display.insert(0, 'Nº', range(1, 1 + len(df_for_display)))
@@ -668,7 +633,7 @@ def toggle_sidebar(n_clicks, is_sidebar_open):
     return sidebar_style, button_text, button_style, new_state
 
 
-# --- CLIENTSIDE CALLBACKS (NOVA SEÇÃO) ---
+# --- CLIENTSIDE CALLBACKS ---
 # Estes callbacks rodam no navegador (JavaScript) para formatação em tempo real
 # e gerenciamento do cursor.
 
