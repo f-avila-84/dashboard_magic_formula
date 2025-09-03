@@ -74,14 +74,23 @@ Esta seção é dedicada a quem deseja entender o código, replicar o ambiente o
 
 O projeto é organizado da seguinte forma:
 ├── assets/ # Diretório para arquivos estáticos (CSS, JavaScript).
+
 │ ├── style.css # Estilos CSS personalizados para o dashboard.
+
 │ └── clientside.js # Funções JavaScript para callbacks clientside (formatação de inputs).
+
 ├── app.py # Script principal do Dash app.
+
 ├── fundamentus_data.csv # Arquivo CSV com os dados das empresas (fonte externa, não gerado por este app).
+
 ├── requirements.txt # Lista de dependências Python.
+
 ├── Procfile # Configurações do gunicorn. Necessário para deploy no Hugging Face.
+
 ├── Dockerfile # Configurações do container docker.
+
 ├── README.md # Este arquivo.
+
 └── DOCUMENTATION.md # Documentação técnica do dashboard
 
 
