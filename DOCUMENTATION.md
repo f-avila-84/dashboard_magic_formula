@@ -75,7 +75,9 @@ Esta seção é dedicada a quem deseja entender o código, replicar o ambiente o
 O projeto é organizado da seguinte forma:
 
 ├── assets/ # Diretório para arquivos estáticos (CSS, JavaScript). 
+
 │ ├── style.css # Estilos CSS personalizados para o dashboard. 
+
 │ └── clientside.js # Funções JavaScript para callbacks clientside (formatação de inputs).
 
 ├── app.py # Script principal do Dash app.
@@ -122,7 +124,9 @@ O projeto é organizado da seguinte forma:
     O dashboard espera um arquivo `fundamentus_data.csv` na raiz do projeto. Este arquivo *não* é gerado por este aplicativo, ele foi obtido de uma fonte externa¹. Certifique-se de que as colunas no CSV correspondem às esperadas no `ALL_COLUMNS_MAP` do `app.py`.
 
 ¹ Verifique os repositórios abaixo para para gerar seu próprio arquivo `fundamentus_data.csv` caso tenha interesse:
+
 [https://github.com/f-avila-84/Fundamentus_ETL_local] ETL rodando sob demanda na máquina local.
+
 [https://github.com/f-avila-84/Fundamentus_ETL_Airflow] ETL rodando de forma agendada na máquina local em conteiner Docker (possibilidade de colocar para rodar na nuvem).
 
 
