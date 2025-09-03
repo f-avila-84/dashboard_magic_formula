@@ -49,8 +49,7 @@ Experimente o dashboard ao vivo aqui:
 [**[Dashboard Magic Formula - Por Felipe Avila]**](https://huggingface.co/spaces/felipe-avila/dashboard_magic_formula)
 
 **Preview:**
-
-_![Screenshot do Dashboard](https://via.placeholder.com/800x450?text=Adicione+aqui+um+screenshot+do+seu+dashboard)_[SEUS PRINTS AQUI - substitua esta linha e o link acima por uma imagem real do seu dashboard]
+![Print Dashboard Fórmula Mágica](https://github.com/user-attachments/assets/3a835908-687c-4b2d-b956-939a1f1829ba)
 
 ---
 
