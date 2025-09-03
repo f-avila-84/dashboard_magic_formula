@@ -1,8 +1,8 @@
 ---
 title: Dashboard Magic Formula
-emoji: 🐢
-colorFrom: yellow
-colorTo: pink
+emoji: 📈
+colorFrom: red
+colorTo: green
 sdk: docker
 pinned: false
 license: mit
