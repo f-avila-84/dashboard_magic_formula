@@ -74,9 +74,8 @@ Esta seção é dedicada a quem deseja entender o código, replicar o ambiente o
 
 O projeto é organizado da seguinte forma:
 
-├── assets/ # Diretório para arquivos estáticos (CSS, JavaScript).\n
-│ ├── style.css # Estilos CSS personalizados para o dashboard.
-
+├── assets/ # Diretório para arquivos estáticos (CSS, JavaScript). 
+│ ├── style.css # Estilos CSS personalizados para o dashboard. 
 │ └── clientside.js # Funções JavaScript para callbacks clientside (formatação de inputs).
 
 ├── app.py # Script principal do Dash app.
