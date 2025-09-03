@@ -1,3 +1,17 @@
+---
+title: Dashboard Magic Formula
+emoji: 🐢
+colorFrom: yellow
+colorTo: pink
+sdk: docker
+pinned: false
+license: mit
+short_description: Aplicação da Fórmula Mágica nas empresas da Bovespa
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
+
 # 📉 Dashboard Interativo: Fórmula Mágica de Joel Greenblatt 📈
 
 Este projeto apresenta um dashboard interativo construído com Dash (Python) que implementa a "Fórmula Mágica" de Joel Greenblatt para ranquear ações, além de oferecer uma ferramenta de alocação de investimento dinâmica. Ideal para investidores que buscam uma abordagem sistemática para selecionar e distribuir capital entre as melhores empresas do mercado brasileiro. Os dados foram extraídos do site Fundamentus[https://www.fundamentus.com.br].
