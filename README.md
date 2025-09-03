@@ -53,7 +53,7 @@ Experimente o dashboard ao vivo aqui:
 
 ---
 
-## 🤝 Conecte-se
+## 📞 Contato
 
 Criado por: **Felipe Avila**
 
