@@ -73,8 +73,8 @@ Esta seção é dedicada a quem deseja entender o código, replicar o ambiente o
 ### 3.1. Estrutura do Projeto
 
 O projeto é organizado da seguinte forma:
-├── assets/ # Diretório para arquivos estáticos (CSS, JavaScript).
 
+├── assets/ # Diretório para arquivos estáticos (CSS, JavaScript).\n
 │ ├── style.css # Estilos CSS personalizados para o dashboard.
 
 │ └── clientside.js # Funções JavaScript para callbacks clientside (formatação de inputs).
