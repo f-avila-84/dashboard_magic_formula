@@ -1,4 +1,4 @@
-# �� Guia do Usuário e Documentação Técnica do Dashboard da Fórmula Mágica
+# 🗎👣 Guia do Usuário e Documentação Técnica do Dashboard da Fórmula Mágica
 
 Este documento serve como um guia abrangente para usuários finais e desenvolvedores interessados em entender, utilizar, replicar ou aprimorar o dashboard interativo da "Fórmula Mágica de Joel Greenblatt".
 
@@ -6,7 +6,7 @@ Este documento serve como um guia abrangente para usuários finais e desenvolved
 
 ## 🎯 1. Sobre o Projeto
 
-O "Dashboard Interativo: Fórmula Mágica de Joel Greenblatt com Alocação Inteligente" é uma ferramenta desenvolvida em Python com a biblioteca Dash para auxiliar investidores na aplicação de uma das estratégias de investimento mais conhecidas: a Fórmula Mágica. Além de ranquear empresas, o dashboard simula a alocação de capital, tornando o processo de decisão mais prático e visual.
+O "Dashboard Interativo: Fórmula Mágica de Joel Greenblatt com Alocação Inteligente" é uma ferramenta desenvolvida em Python com a biblioteca Dash para auxiliar investidores na aplicação de uma das estratégias de investimento bastante conhecida. Além de ranquear empresas, o dashboard simula a alocação de capital, tornando o processo de decisão mais prático e visual.
 
 ### 1.1. O que é a Fórmula Mágica?
 
@@ -22,19 +22,19 @@ A estratégia ranqueia empresas com base nesses dois fatores e sugere investir n
 
 ### 2.1. Configurações do Ranking (Sidebar Esquerda)
 
-A sidebar permite que você ajuste os parâmetros para a seleção e ranqueamento das empresas:
+A barra lateral permite que você ajuste os parâmetros para a seleção e ranqueamento das empresas:
 
 *   **Número de empresas a exibir e pré-selecionar:** Use o slider para definir quantas empresas com melhor ranqueamento pela Fórmula Mágica serão exibidas na tabela principal. Este número também pré-seleciona as empresas para o cálculo de alocação.
-*   **Volume Médio Negociado (últimos 2 meses) Mínimo (R\$):** Filtra as empresas com base na liquidez. Insira um valor mínimo para o volume médio diário de negociação nos últimos 2 meses. Empresas com volume abaixo desse limite não serão consideradas, evitando ações com baixa liquidez que poderiam dificultar a compra/venda. O valor é automaticamente formatado para o padrão brasileiro (milhares com ponto).
+*   **Volume Médio Negociado (últimos 2 meses) Mínimo (R$):** Filtra as empresas com base na liquidez. Insira um valor mínimo para o volume médio diário de negociação nos últimos 2 meses. Empresas com volume abaixo desse limite não serão consideradas, evitando ações com baixa liquidez que poderiam dificultar a compra/venda.
 
-### 2.2. Configurações de Investimento (Sidebar Esquerda)
+### 2.2. Configurações de Investimento (Barra Lateral Esquerda)
 
-*   **Valor a Investir (R\$):** Digite o valor total que você pretende alocar nesta estratégia. O dashboard utilizará este valor para calcular a quantidade de ações e o peso na carteira para as empresas selecionadas. O valor é automaticamente formatado para o padrão brasileiro (milhares com ponto, decimais com vírgula).
+*   **Valor a Investir (R$):** Digite o valor total que você pretende alocar nesta estratégia. O dashboard utilizará este valor para calcular a quantidade de ações e o peso na carteira para as empresas selecionadas.
 *   **Tipo de Lote de Compra:**
     *   **Fracionário (1+ ações):** Permite a compra de qualquer quantidade de ações, incluindo frações (simulado aqui como compra de 1, 2, 3... ações).
     *   **Padrão (100+ ações):** Restringe a compra a múltiplos de 100 ações.
 
-### 2.3. Colunas a Exibir (Sidebar Esquerda)
+### 2.3. Colunas a Exibir (Barra Lateral Esquerda)
 
 *   **Selecione as colunas para exibir:** Use o dropdown para escolher quais informações das empresas você deseja visualizar na tabela principal. A ordem em que você seleciona as colunas definirá a ordem delas na tabela.
 
@@ -43,8 +43,8 @@ A sidebar permite que você ajuste os parâmetros para a seleção e ranqueament
 Apresenta as empresas ranqueadas e suas métricas.
 
 *   **Seleção de Linhas:** As caixas de seleção na primeira coluna permitem incluir ou excluir empresas do cálculo de alocação. Por padrão, as empresas são pré-selecionadas com base no slider "Número de empresas a exibir".
-*   **Dados e Formatação:** A tabela exibe os dados das empresas com formatação numérica amigável para o padrão brasileiro (e.g., "R\$ 1.234,56", "1.234.567", "12,34%").
-*   **Colunas de Cálculo Dinâmico:** As colunas "Qtd. Ações", "Valor Alocado (R\$)" e "% na Carteira" são atualizadas em tempo real com base nas suas seleções e configurações de investimento.
+*   **Dados e Formatação:** A tabela exibe os dados das empresas com formatação numérica amigável para o padrão brasileiro (e.g., "R$ 1.234,56", "1.234.567", "12,34%").
+*   **Colunas de Cálculo Dinâmico:** As colunas "Qtd. Ações", "Valor Alocado (R$)" e "% na Carteira" são atualizadas em tempo real com base nas suas seleções e configurações de investimento.
 
 ### 2.5. Resumo da Alocação de Investimento
 
@@ -62,7 +62,7 @@ Uma seção detalhada para cada métrica presente no dashboard, explicando seu s
 
 ### 2.7. Seção de Contato
 
-No final do dashboard, há uma seção com seus links de LinkedIn e GitHub, facilitando que outros profissionais e interessados no seu trabalho possam se conectar.
+No final do dashboard, há uma seção com meus links de LinkedIn e GitHub, para que interessados no trabalho possam entrar em contato.
 
 ---
 
@@ -111,7 +111,12 @@ O projeto é organizado da seguinte forma:
     gunicorn # Necessário para deploy em ambientes como Hugging Face Spaces
     ```
 4.  **Obtenha os dados:**
-    O dashboard espera um arquivo `fundamentus_data.csv` na raiz do projeto. Este arquivo *não* é gerado por este aplicativo. Ele deve ser obtido de uma fonte externa (como o site Fundamentus ou um script de web scraping que você possa ter desenvolvido). Certifique-se de que as colunas no CSV correspondem às esperadas no `ALL_COLUMNS_MAP` do `app.py`.
+    O dashboard espera um arquivo `fundamentus_data.csv` na raiz do projeto. Este arquivo *não* é gerado por este aplicativo, ele foi obtido de uma fonte externa¹. Certifique-se de que as colunas no CSV correspondem às esperadas no `ALL_COLUMNS_MAP` do `app.py`.
+
+¹ Verifique os repositórios abaixo para para gerar seu próprio arquivo `fundamentus_data.csv` caso tenha interesse:
+[https://github.com/f-avila-84/Fundamentus_ETL_local] ETL rodando sob demanda na máquina local.
+[https://github.com/f-avila-84/Fundamentus_ETL_Airflow] ETL rodando de forma agendada na máquina local em conteiner Docker (possibilidade de colocar para rodar na nuvem).
+
 
 5.  **Execute o aplicativo:**
     ```bash
@@ -153,7 +158,7 @@ Para fazer o deploy deste dashboard no Hugging Face Spaces:
     *   Verifique se o `fundamentus_data.csv` está presente na raiz do projeto e se não está vazio.
     *   Confirme se as colunas no CSV correspondem aos nomes esperados no `app.py`.
     *   Verifique os `Input`s dos callbacks `update_filtered_data_and_table` e `update_allocation_and_summary` para garantir que os valores dos filtros estão sendo passados corretamente.
-    *   Especialmente para o erro que corrigimos, certifique-se de que a lista de `dash_table_columns_ids` em `update_table_with_calculated_data` contenha apenas *strings* (os IDs das colunas) e não dicionários ou outros objetos.
+    *   Certifique-se de que a lista de `dash_table_columns_ids` em `update_table_with_calculated_data` contenha apenas *strings* (os IDs das colunas) e não dicionários ou outros objetos.
 *   **CSS não Aplicado/Design Quebrado:**
     *   Verifique se o arquivo `style.css` está em `assets/style.css`.
     *   Limpe o cache do seu navegador (Ctrl+Shift+R ou Cmd+Shift+R).
